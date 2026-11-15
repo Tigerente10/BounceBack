@@ -6,7 +6,34 @@
 [ext_resource type="Texture2D" uid="uid://bubavx4288q36" path="res://pixil-frame-0 (3).png" id="5_nt07i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pj7l"]
-size = Vector2(42, 56)
+size = Vector2(228.57147, 63.321438)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6wdt"]
+size = Vector2(285.6072, 119.50004)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3p87w"]
+size = Vector2(342.8036, 119.50004)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rver"]
+size = Vector2(342.8036, 119.50004)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cp2u"]
+size = Vector2(228.57141, 119.50004)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rek4p"]
+size = Vector2(278.57147, 170.46388)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi3i3"]
+size = Vector2(228.57147, 63.321438)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2p8la"]
+size = Vector2(232.14297, 63.321438)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6q7w"]
+size = Vector2(496.4283, 63.321438)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhsb8"]
+size = Vector2(171.42838, 63.321438)
 
 [sub_resource type="GDScript" id="GDScript_2pj7l"]
 resource_name = "Player.gd"
@@ -299,19 +326,161 @@ size = Vector2(80, 16)
 [node name="Node2D" type="Node2D" unique_id=178134174]
 
 [node name="Checkpoint" type="Area2D" parent="." unique_id=288104452 groups=["Checkpoint"]]
-visible = false
-position = Vector2(-335, 227)
+position = Vector2(-692, -49)
 
 [node name="Sprite2D" type="Sprite2D" parent="Checkpoint" unique_id=304386976 groups=["Checkpoint"]]
 show_behind_parent = true
-scale = Vector2(0.035, 0.035)
+position = Vector2(52, -1)
+scale = Vector2(0.01, 0.01)
 texture = ExtResource("3_cdtle")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint" unique_id=1028077449 groups=["Checkpoint"]]
+position = Vector2(26, 0)
+scale = Vector2(0.28, 0.28)
 shape = SubResource("RectangleShape2D_2pj7l")
 
+[node name="Checkpoint2" type="Area2D" parent="." unique_id=1485622857 groups=["Checkpoint"]]
+position = Vector2(-348, 175)
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoint2" unique_id=2114466224 groups=["Checkpoint"]]
+show_behind_parent = true
+position = Vector2(-22, -2)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_cdtle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint2" unique_id=289697785 groups=["Checkpoint"]]
+position = Vector2(11, -10)
+scale = Vector2(0.28, 0.28)
+shape = SubResource("RectangleShape2D_f6wdt")
+
+[node name="Checkpoint3" type="Area2D" parent="." unique_id=1236913429 groups=["Checkpoint"]]
+position = Vector2(-141, 1090)
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoint3" unique_id=134591622 groups=["Checkpoint"]]
+show_behind_parent = true
+position = Vector2(45, -1)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_cdtle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint3" unique_id=1625739821 groups=["Checkpoint"]]
+position = Vector2(19.007492, -10)
+scale = Vector2(0.28, 0.28)
+shape = SubResource("RectangleShape2D_3p87w")
+
+[node name="Checkpoint4" type="Area2D" parent="." unique_id=1289116821 groups=["Checkpoint"]]
+position = Vector2(35, 1471)
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoint4" unique_id=1354802217 groups=["Checkpoint"]]
+show_behind_parent = true
+position = Vector2(45, -1)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_cdtle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint4" unique_id=2101064367 groups=["Checkpoint"]]
+position = Vector2(19.007492, -10)
+scale = Vector2(0.28, 0.28)
+shape = SubResource("RectangleShape2D_5rver")
+
+[node name="Checkpoint5" type="Area2D" parent="." unique_id=1383938092 groups=["Checkpoint"]]
+position = Vector2(-13, 2111)
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoint5" unique_id=260382950 groups=["Checkpoint"]]
+show_behind_parent = true
+position = Vector2(45, -1)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_cdtle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint5" unique_id=2068900821 groups=["Checkpoint"]]
+position = Vector2(34.999996, -10)
+scale = Vector2(0.28, 0.28)
+shape = SubResource("RectangleShape2D_2cp2u")
+
+[node name="Checkpoint6" type="Area2D" parent="." unique_id=1132518202 groups=["Checkpoint"]]
+position = Vector2(-627, 2856)
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoint6" unique_id=2106438533 groups=["Checkpoint"]]
+show_behind_parent = true
+position = Vector2(45, -1)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_cdtle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint6" unique_id=954203044 groups=["Checkpoint"]]
+position = Vector2(19, -17.13501)
+scale = Vector2(0.28, 0.28)
+shape = SubResource("RectangleShape2D_rek4p")
+
+[node name="Checkpoint7" type="Area2D" parent="." unique_id=569835153 groups=["Checkpoint"]]
+position = Vector2(-850, 1960)
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoint7" unique_id=952935257 groups=["Checkpoint"]]
+show_behind_parent = true
+position = Vector2(45, -1)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_cdtle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint7" unique_id=201971753 groups=["Checkpoint"]]
+position = Vector2(26, -17.13501)
+scale = Vector2(0.28, 0.28)
+shape = SubResource("RectangleShape2D_rek4p")
+
+[node name="Checkpoint8" type="Area2D" parent="." unique_id=2049453071 groups=["Checkpoint"]]
+position = Vector2(-1387, 1558)
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoint8" unique_id=255391945 groups=["Checkpoint"]]
+show_behind_parent = true
+position = Vector2(52, -1)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_cdtle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint8" unique_id=2108337427 groups=["Checkpoint"]]
+position = Vector2(26, 0)
+scale = Vector2(0.28, 0.28)
+shape = SubResource("RectangleShape2D_yi3i3")
+
+[node name="Checkpoint9" type="Area2D" parent="." unique_id=765018180 groups=["Checkpoint"]]
+position = Vector2(-1498, 1143)
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoint9" unique_id=730919740 groups=["Checkpoint"]]
+show_behind_parent = true
+position = Vector2(52, -1)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_cdtle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint9" unique_id=1516311924 groups=["Checkpoint"]]
+position = Vector2(25.5, 0)
+scale = Vector2(0.28, 0.28)
+shape = SubResource("RectangleShape2D_2p8la")
+
+[node name="Checkpoint10" type="Area2D" parent="." unique_id=426878227 groups=["Checkpoint"]]
+position = Vector2(-2215, 822)
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoint10" unique_id=1016213922 groups=["Checkpoint"]]
+show_behind_parent = true
+position = Vector2(48, 1)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_cdtle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint10" unique_id=314929138 groups=["Checkpoint"]]
+position = Vector2(63, 0)
+scale = Vector2(0.28, 0.28)
+shape = SubResource("RectangleShape2D_k6q7w")
+
+[node name="Checkpoint11" type="Area2D" parent="." unique_id=1476917937 groups=["Checkpoint"]]
+position = Vector2(-1626, 278)
+
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoint11" unique_id=1649981060 groups=["Checkpoint"]]
+show_behind_parent = true
+position = Vector2(48, 1)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("3_cdtle")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint11" unique_id=1546433939 groups=["Checkpoint"]]
+position = Vector2(66, 0)
+scale = Vector2(0.28, 0.28)
+shape = SubResource("RectangleShape2D_xhsb8")
+
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1259085629]
-position = Vector2(-259, 568)
+position = Vector2(9, 2103)
 scale = Vector2(0.01, 0.01)
 collision_mask = 3
 script = SubResource("GDScript_2pj7l")
@@ -324,7 +493,6 @@ shape = SubResource("RectangleShape2D_f25ch")
 [node name="Camera2D" type="Camera2D" parent="Player/CollisionShape2D2" unique_id=1159369989]
 position = Vector2(1.2023926, -1.5000305)
 scale = Vector2(1.0000004, 1.0000004)
-zoom = Vector2(4, 4)
 
 [node name="Area2D" type="Area2D" parent="Player" unique_id=1044452417]
 

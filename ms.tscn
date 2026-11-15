@@ -8,14 +8,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pj7l"]
 size = Vector2(228.57147, 63.321438)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6wdt"]
-size = Vector2(285.6072, 119.50004)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5ay7"]
+size = Vector2(285.71436, 108.85712)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3p87w"]
-size = Vector2(342.8036, 119.50004)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpf5p"]
+size = Vector2(339.2857, 53.57141)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rver"]
-size = Vector2(342.8036, 119.50004)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76e1u"]
+size = Vector2(339.2857, 75.00012)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cp2u"]
 size = Vector2(228.57141, 119.50004)
@@ -42,6 +42,8 @@ script/source = "extends CharacterBody2D
 @onready var timer = $\"../FloorTimer\"
 var timeout = 0.25
 var can_jump
+var curCheckPoint = 0
+var died = false
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -175.0
@@ -53,6 +55,7 @@ var timeLeft = startTime
 var respawnPosition = self.position
 
 var acceleration = 1000
+
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
@@ -134,9 +137,12 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group(\"Checkpoint\"):
-		$\"../CanvasLayer/Label2\".text = \"Checkpoint reached\"
 		print(\"help\")
 		respawnPosition = self.position;
+		curCheckPoint = str(area.name)
+		curCheckPoint = curCheckPoint.replace(\"Checkpoint\", \"\")
+		$\"../CanvasLayer/Label2\".text = curCheckPoint
+		
 	if area.is_in_group(\"Killzone\"):
 		self.position = respawnPosition
 
@@ -325,16 +331,16 @@ size = Vector2(80, 16)
 
 [node name="Node2D" type="Node2D" unique_id=178134174]
 
-[node name="Checkpoint" type="Area2D" parent="." unique_id=288104452 groups=["Checkpoint"]]
+[node name="Checkpoint1" type="Area2D" parent="." unique_id=288104452 groups=["Checkpoint"]]
 position = Vector2(-692, -49)
 
-[node name="Sprite2D" type="Sprite2D" parent="Checkpoint" unique_id=304386976 groups=["Checkpoint"]]
+[node name="Sprite2D" type="Sprite2D" parent="Checkpoint1" unique_id=304386976 groups=["Checkpoint"]]
 show_behind_parent = true
 position = Vector2(52, -1)
 scale = Vector2(0.01, 0.01)
 texture = ExtResource("3_cdtle")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint" unique_id=1028077449 groups=["Checkpoint"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint1" unique_id=1028077449 groups=["Checkpoint"]]
 position = Vector2(26, 0)
 scale = Vector2(0.28, 0.28)
 shape = SubResource("RectangleShape2D_2pj7l")
@@ -349,9 +355,9 @@ scale = Vector2(0.01, 0.01)
 texture = ExtResource("3_cdtle")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint2" unique_id=289697785 groups=["Checkpoint"]]
-position = Vector2(11, -10)
+position = Vector2(10, -8.7599945)
 scale = Vector2(0.28, 0.28)
-shape = SubResource("RectangleShape2D_f6wdt")
+shape = SubResource("RectangleShape2D_r5ay7")
 
 [node name="Checkpoint3" type="Area2D" parent="." unique_id=1236913429 groups=["Checkpoint"]]
 position = Vector2(-141, 1090)
@@ -363,9 +369,9 @@ scale = Vector2(0.01, 0.01)
 texture = ExtResource("3_cdtle")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint3" unique_id=1625739821 groups=["Checkpoint"]]
-position = Vector2(19.007492, -10)
+position = Vector2(19.5, -2.5)
 scale = Vector2(0.28, 0.28)
-shape = SubResource("RectangleShape2D_3p87w")
+shape = SubResource("RectangleShape2D_bpf5p")
 
 [node name="Checkpoint4" type="Area2D" parent="." unique_id=1289116821 groups=["Checkpoint"]]
 position = Vector2(35, 1471)
@@ -377,9 +383,9 @@ scale = Vector2(0.01, 0.01)
 texture = ExtResource("3_cdtle")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint4" unique_id=2101064367 groups=["Checkpoint"]]
-position = Vector2(19.007492, -10)
+position = Vector2(20, -2)
 scale = Vector2(0.28, 0.28)
-shape = SubResource("RectangleShape2D_5rver")
+shape = SubResource("RectangleShape2D_76e1u")
 
 [node name="Checkpoint5" type="Area2D" parent="." unique_id=1383938092 groups=["Checkpoint"]]
 position = Vector2(-13, 2111)
@@ -480,7 +486,7 @@ scale = Vector2(0.28, 0.28)
 shape = SubResource("RectangleShape2D_xhsb8")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1259085629]
-position = Vector2(9, 2103)
+position = Vector2(-739, -125)
 scale = Vector2(0.01, 0.01)
 collision_mask = 3
 script = SubResource("GDScript_2pj7l")
@@ -493,6 +499,7 @@ shape = SubResource("RectangleShape2D_f25ch")
 [node name="Camera2D" type="Camera2D" parent="Player/CollisionShape2D2" unique_id=1159369989]
 position = Vector2(1.2023926, -1.5000305)
 scale = Vector2(1.0000004, 1.0000004)
+zoom = Vector2(3, 3)
 
 [node name="Area2D" type="Area2D" parent="Player" unique_id=1044452417]
 

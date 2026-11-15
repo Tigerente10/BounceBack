@@ -4,24 +4,17 @@
 
 ### About the Game
 
-BounceBack is a 2D platformer where time is your greatest enemy.
-
-The player must navigate through challenging levels filled with obstacles, jumps, and hazards while racing against the clock. If the timer reaches zero before the player reaches the next checkpoint, they are not simply defeated. Instead, they are bounced back to the last checkpoint and must try again, using the knowledge gained from previous attempts.
-
-This unique mechanic encourages learning, experimentation, and mastery of each section of the level.
+The player must follow a course and complete levels with obstacles while not running out of time. If the clock reaches zero before reaching the next checkpoint it resets you to the last checkpoint.
 
 ### Gameplay Features
 
-Classic 2D platforming movement
 Time-based challenge system
 Checkpoint system for progression
 Automatic "Bounce Back" mechanic when time runs out
-Increasingly difficult platforming sections
-Retry and improve with every attempt
 
 ### Controls
 
-Arrow keys
+Arrow keys (left, right, jump)
 
 ### How It Works
 
@@ -36,7 +29,7 @@ Reach the goal before running out of time.
 
 ### Goal
 
-The objective is to reach the end of each level by carefully managing time, mastering movement, and learning from previous mistakes.
+The objective is to reach the end of the map.
 
 ### Project Information
 
@@ -44,6 +37,10 @@ Project Name: BounceBack
 Event: Haven Bern 26
 Genre: 2D Platformer
 Core Mechanic: Time reversal through checkpoint bouncing
+
+### Where to play
+
+https://tigerente10.itch.io/ran-out-of-time
 
 ### Team
 

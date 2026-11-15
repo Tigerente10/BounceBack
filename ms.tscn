@@ -77,32 +77,17 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		$\"../CanvasLayer/Label2\".text = \"Checkpoint reached\"
 		print(\"help\")
 		respawnPosition = self.position;
-		
+	if area.is_in_group(\"Killzone\"):
+		self.positon = respawnPosition
 
 
 func _on_floor_timer_timeout() -> void:
 	can_jump = false
+	
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f25ch"]
 size = Vector2(708.40955, 690.0001)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nt07i"]
-texture = ExtResource("4_iafjf")
-separation = Vector2i(1, 1)
-texture_region_size = Vector2i(8, 8)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-0:5/0 = 0
-0:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41svy"]
 texture = ExtResource("5_nt07i")
@@ -124,8 +109,25 @@ texture_region_size = Vector2i(8, 8)
 [sub_resource type="TileSet" id="TileSet_2pj7l"]
 tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 1
-sources/1 = SubResource("TileSetAtlasSource_nt07i")
+physics_layer_1/collision_layer = 2
 sources/2 = SubResource("TileSetAtlasSource_41svy")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nt07i"]
+texture = ExtResource("4_iafjf")
+separation = Vector2i(1, 1)
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+0:5/0 = 0
+0:6/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_plwb7"]
 texture = ExtResource("5_nt07i")
@@ -150,6 +152,108 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_nt07i")
 sources/1 = SubResource("TileSetAtlasSource_plwb7")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iafjf"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qryha"]
+size = Vector2(256, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nt07i"]
+size = Vector2(320, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41svy"]
+size = Vector2(176, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plwb7"]
+size = Vector2(512, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qputh"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_durqp"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6jyt"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_266tu"]
+size = Vector2(48, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhwbt"]
+size = Vector2(112, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgaae"]
+size = Vector2(112, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcsbj"]
+size = Vector2(96, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1drws"]
+size = Vector2(128, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s22ai"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u6va"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc63j"]
+size = Vector2(240, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtekc"]
+size = Vector2(336, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isrvv"]
+size = Vector2(176, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3hlt"]
+size = Vector2(128, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjhfv"]
+size = Vector2(112, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymgny"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hatrs"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gohu1"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxklg"]
+size = Vector2(64, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nd2ux"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f66sb"]
+size = Vector2(112, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjvl3"]
+size = Vector2(144, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pba3b"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7x85k"]
+size = Vector2(128, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87t1g"]
+size = Vector2(496, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvkq3"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tfieu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ju6fo"]
+size = Vector2(80, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyacx"]
+size = Vector2(80, 16)
+
 [node name="Node2D" type="Node2D" unique_id=178134174]
 
 [node name="Checkpoint" type="Area2D" parent="." unique_id=288104452 groups=["Checkpoint"]]
@@ -167,6 +271,7 @@ shape = SubResource("RectangleShape2D_2pj7l")
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1259085629]
 position = Vector2(-533, -73)
 scale = Vector2(0.01, 0.01)
+collision_mask = 3
 script = SubResource("GDScript_2pj7l")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1659902883]
@@ -194,7 +299,7 @@ texture = ExtResource("2_nt07i")
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=923774148]
 position = Vector2(6, -10)
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAC8//z/AgAAAAAAAAC9//z/AgAAAAAAAAC+//z/AgAAAAAAAAC///z/AgAAAAAAAADB//v/AgAAAAAAAADC//v/AgAAAAAAAADE//r/AgAAAAAAAADF//r/AgAAAAAAAADH//n/AgAAAAAAAADI//n/AgAAAAAAAADJ//n/AgAAAAAAAADL//j/AgAAAAUAAADL//n/AgAAAAAAAADM//n/AgAAAAAAAADM//j/AgAAAAAAAADL//r/AgAAAAAAAADM//r/AgAAAAAAAAC4////AgAAAAUAAAC5////AgAAAAUAAAC6////AgAAAAUAAAC7////AgAAAAUAAAC8////AgAAAAUAAAC9////AgAAAAUAAAC+////AgAAAAUAAAC/////AgAAAAUAAADA////AgAAAAUAAADB////AgAAAAUAAADC////AgAAAAUAAADD////AgAAAAUAAADE////AgAAAAUAAADF////AgAAAAUAAADG////AgAAAAUAAADH////AgAAAAUAAADI////AgAAAAUAAADJ////AgAAAAUAAADK////AgAAAAUAAADL////AgAAAAUAAADP////AgAAAAUAAADO////AgAAAAUAAADM////AgAAAAUAAADN////AgAAAAUAAADO//n/AgAAAAAAAADP//n/AgAAAAAAAADR//r/AgAAAAAAAADQ////AgAAAAUAAADR////AgAAAAUAAADS////AgAAAAUAAADT////AgAAAAUAAADV//z/AQAAAAMAAADU//z/AQAAAAMAAADU//3/AQAAAAMAAADV//3/AQAAAAMAAADU//7/AgAAAAAAAADV//7/AgAAAAAAAADW//7/AgAAAAAAAADX//7/AgAAAAAAAADZ/wEAAgAAAAAAAADa/wEAAgAAAAAAAADb/wEAAgAAAAAAAADc/wEAAgAAAAAAAADh/wAAAgAAAAAAAADh/wMAAgAAAAAAAADh/wQAAgAAAAAAAADh/wUAAgAAAAAAAADh/wYAAgAAAAAAAADh/wcAAgAAAAAAAADh/wgAAgAAAAAAAADh/wkAAgAAAAAAAADh/woAAgAAAAAAAADh/wsAAgAAAAAAAADh/wwAAgAAAAAAAADh/w0AAgAAAAAAAADe/wUAAgAAAAAAAADf/wUAAgAAAAAAAADg/wUAAgAAAAAAAADd/wUAAgAAAAAAAADW/wgAAgAAAAAAAADX/wgAAgAAAAAAAADY/wgAAgAAAAAAAADZ/wgAAgAAAAAAAADa/wgAAgAAAAAAAADb/wgAAgAAAAAAAADb/wsAAgAAAAAAAADc/wsAAgAAAAAAAADd/wsAAgAAAAAAAADe/wsAAgAAAAAAAADf/wsAAgAAAAAAAADg/wsAAgAAAAAAAADW/w4AAgAAAAAAAADX/w4AAgAAAAAAAADY/w4AAgAAAAAAAADZ/w4AAgAAAAAAAADa/w4AAgAAAAAAAADb/w4AAgAAAAAAAADc/w4AAgAAAAAAAADd/w4AAgAAAAAAAADe/w4AAgAAAAAAAADf/w4AAgAAAAAAAADg/w4AAgAAAAAAAADh/w4AAgAAAAAAAADi/wMAAQAAAAAAAADj/wMAAQAAAAAAAADk/wMAAQAAAAAAAADl/wMAAQAAAAAAAADo/wYAAgAAAAAAAADp/wYAAgAAAAAAAADq/wYAAgAAAAAAAADr/wYAAgAAAAAAAADs/wYAAgAAAAUAAADt/wAAAgAAAAAAAADt/wEAAgAAAAAAAADt/wIAAgAAAAAAAADt/wMAAgAAAAAAAADt/wQAAgAAAAAAAADt/wUAAgAAAAAAAADt/wYAAgAAAAAAAADt/wcAAgAAAAAAAADt/wgAAgAAAAAAAADt/wkAAgAAAAAAAADt/woAAgAAAAAAAADt/wsAAgAAAAAAAADt/wwAAgAAAAAAAADt/w0AAgAAAAAAAADt/w4AAgAAAAAAAADi/wkAAgAAAAUAAADj/wkAAgAAAAAAAADk/wkAAgAAAAAAAADl/wkAAgAAAAAAAADm/wkAAgAAAAAAAADn/wkAAgAAAAAAAADo/wwAAgAAAAAAAADp/wwAAgAAAAAAAADq/wwAAgAAAAAAAADr/wwAAgAAAAAAAADs/wwAAgAAAAAAAADi/w4AAgAAAAAAAADj/w4AAgAAAAAAAADk/w4AAgAAAAAAAADl/w4AAgAAAAAAAADh////AgAAAAAAAADi//7/AgAAAAAAAADj//3/AgAAAAAAAADk/wwAAQAAAAMAAADk/w0AAQAAAAMAAADl/wwAAQAAAAMAAADp/xEAAgAAAAAAAADn/xAAAgAAAAAAAADr/xIAAgAAAAAAAADt/xQAAgAAAAAAAADr/xUAAgAAAAAA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")
+tile_map_data = PackedByteArray("AAC8//z/AgAAAAAAAAC9//z/AgAAAAAAAAC+//z/AgAAAAAAAAC///z/AgAAAAAAAADB//v/AgAAAAAAAADC//v/AgAAAAAAAADE//r/AgAAAAAAAADF//r/AgAAAAAAAADH//n/AgAAAAAAAADI//n/AgAAAAAAAADJ//n/AgAAAAAAAADL//j/AgAAAAUAAADL//n/AgAAAAAAAADM//n/AgAAAAAAAADM//j/AgAAAAAAAADL//r/AgAAAAAAAADM//r/AgAAAAAAAAC4////AgAAAAUAAAC5////AgAAAAUAAAC6////AgAAAAUAAAC7////AgAAAAUAAAC8////AgAAAAUAAAC9////AgAAAAUAAAC+////AgAAAAUAAAC/////AgAAAAUAAADA////AgAAAAUAAADB////AgAAAAUAAADC////AgAAAAUAAADD////AgAAAAUAAADE////AgAAAAUAAADF////AgAAAAUAAADG////AgAAAAUAAADH////AgAAAAUAAADI////AgAAAAUAAADJ////AgAAAAUAAADK////AgAAAAUAAADL////AgAAAAUAAADP////AgAAAAUAAADO////AgAAAAUAAADM////AgAAAAUAAADN////AgAAAAUAAADO//n/AgAAAAAAAADP//n/AgAAAAAAAADR//r/AgAAAAAAAADQ////AgAAAAUAAADR////AgAAAAUAAADS////AgAAAAUAAADT////AgAAAAUAAADV//z/AQAAAAMAAADU//z/AQAAAAMAAADU//3/AQAAAAMAAADV//3/AQAAAAMAAADU//7/AgAAAAAAAADV//7/AgAAAAAAAADW//7/AgAAAAAAAADX//7/AgAAAAAAAADZ/wEAAgAAAAAAAADa/wEAAgAAAAAAAADb/wEAAgAAAAAAAADc/wEAAgAAAAAAAADh/wAAAgAAAAAAAADh/wMAAgAAAAAAAADh/wQAAgAAAAAAAADh/wUAAgAAAAAAAADh/wYAAgAAAAAAAADh/wcAAgAAAAAAAADh/wgAAgAAAAAAAADh/wkAAgAAAAAAAADh/woAAgAAAAAAAADh/wsAAgAAAAAAAADh/wwAAgAAAAAAAADh/w0AAgAAAAAAAADe/wUAAgAAAAAAAADf/wUAAgAAAAAAAADg/wUAAgAAAAAAAADd/wUAAgAAAAAAAADW/wgAAgAAAAAAAADX/wgAAgAAAAAAAADY/wgAAgAAAAAAAADZ/wgAAgAAAAAAAADa/wgAAgAAAAAAAADb/wgAAgAAAAAAAADb/wsAAgAAAAAAAADc/wsAAgAAAAAAAADd/wsAAgAAAAAAAADe/wsAAgAAAAAAAADf/wsAAgAAAAAAAADg/wsAAgAAAAAAAADW/w4AAgAAAAAAAADX/w4AAgAAAAAAAADY/w4AAgAAAAAAAADZ/w4AAgAAAAAAAADa/w4AAgAAAAAAAADb/w4AAgAAAAAAAADc/w4AAgAAAAAAAADd/w4AAgAAAAAAAADe/w4AAgAAAAAAAADf/w4AAgAAAAAAAADg/w4AAgAAAAAAAADh/w4AAgAAAAAAAADi/wMAAQAAAAAAAADj/wMAAQAAAAAAAADk/wMAAQAAAAAAAADl/wMAAQAAAAAAAADo/wYAAgAAAAAAAADp/wYAAgAAAAAAAADq/wYAAgAAAAAAAADr/wYAAgAAAAAAAADs/wYAAgAAAAUAAADt/wAAAgAAAAAAAADt/wEAAgAAAAAAAADt/wIAAgAAAAAAAADt/wMAAgAAAAAAAADt/wQAAgAAAAAAAADt/wUAAgAAAAAAAADt/wYAAgAAAAAAAADt/wcAAgAAAAAAAADt/wgAAgAAAAAAAADt/wkAAgAAAAAAAADt/woAAgAAAAAAAADt/wsAAgAAAAAAAADt/wwAAgAAAAAAAADt/w0AAgAAAAAAAADt/w4AAgAAAAAAAADi/wkAAgAAAAUAAADj/wkAAgAAAAAAAADk/wkAAgAAAAAAAADl/wkAAgAAAAAAAADm/wkAAgAAAAAAAADn/wkAAgAAAAAAAADo/wwAAgAAAAAAAADp/wwAAgAAAAAAAADq/wwAAgAAAAAAAADr/wwAAgAAAAAAAADs/wwAAgAAAAAAAADi/w4AAgAAAAAAAADj/w4AAgAAAAAAAADk/w4AAgAAAAAAAADl/w4AAgAAAAAAAADh////AgAAAAAAAADi//7/AgAAAAAAAADj//3/AgAAAAAAAADk/wwAAQAAAAMAAADk/w0AAQAAAAMAAADl/wwAAQAAAAMAAADp/xEAAgAAAAAAAADn/xAAAgAAAAAAAADr/xIAAgAAAAAAAADt/xQAAgAAAAAAAADr/xUAAgAAAAAA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")
 tile_set = SubResource("TileSet_2pj7l")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2076143142]
@@ -220,6 +325,408 @@ tile_map_data = PackedByteArray("AADd/x0AAAAAAAMAAADe/x0AAAAAAAMAAADf/x0AAAAAAAM
 tile_set = SubResource("TileSet_wtp68")
 
 [node name="FloorTimer" type="Timer" parent="." unique_id=1691180166]
+
+[node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=423163580 groups=["Killzone"]]
+offset_right = 24.0
+offset_bottom = 32.0
+
+[node name="Area2D2" type="Area2D" parent="FoldableContainer" unique_id=1083672742 groups=["Killzone"]]
+position = Vector2(-304, 96)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D2" unique_id=419966431 groups=["Killzone"]]
+position = Vector2(-2, -2)
+shape = SubResource("RectangleShape2D_iafjf")
+
+[node name="Area2D3" type="Area2D" parent="FoldableContainer" unique_id=43409521 groups=["Killzone"]]
+position = Vector2(-466, 142)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D3" unique_id=343875266 groups=["Killzone"]]
+shape = SubResource("RectangleShape2D_iafjf")
+
+[node name="Area2D" type="Area2D" parent="FoldableContainer" unique_id=1484312426 groups=["Killzone"]]
+position = Vector2(-466, 142)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D" unique_id=1366758869 groups=["Killzone"]]
+position = Vector2(-280, 160)
+shape = SubResource("RectangleShape2D_qryha")
+
+[node name="Area2D7" type="Area2D" parent="FoldableContainer" unique_id=1471423669 groups=["Killzone"]]
+position = Vector2(-466, 142)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D7" unique_id=1613714370 groups=["Killzone"]]
+position = Vector2(88, 480)
+shape = SubResource("RectangleShape2D_nt07i")
+
+[node name="Area2D5" type="Area2D" parent="FoldableContainer" unique_id=1991451845 groups=["Killzone"]]
+position = Vector2(-932, 284)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D5" unique_id=1643327505 groups=["Killzone"]]
+position = Vector2(658, 162)
+shape = SubResource("RectangleShape2D_41svy")
+
+[node name="Area2D4" type="Area2D" parent="FoldableContainer" unique_id=1622061641 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D4" unique_id=907842209 groups=["Killzone"]]
+position = Vector2(-248, 0)
+shape = SubResource("RectangleShape2D_plwb7")
+
+[node name="Area2D6" type="Area2D" parent="FoldableContainer" unique_id=2107101049 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D6" unique_id=735254351 groups=["Killzone"]]
+position = Vector2(-128, -112)
+shape = SubResource("RectangleShape2D_qputh")
+
+[node name="Area2D8" type="Area2D" parent="FoldableContainer" unique_id=573310387 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D8" unique_id=948296798 groups=["Killzone"]]
+position = Vector2(384, 608)
+shape = SubResource("RectangleShape2D_durqp")
+
+[node name="Area2D9" type="Area2D" parent="FoldableContainer" unique_id=195068081 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D9" unique_id=458443411 groups=["Killzone"]]
+position = Vector2(656, 832)
+shape = SubResource("RectangleShape2D_s6jyt")
+
+[node name="Area2D10" type="Area2D" parent="FoldableContainer" unique_id=1899512287 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D10" unique_id=1667332874 groups=["Killzone"]]
+position = Vector2(864, 784)
+shape = SubResource("RectangleShape2D_266tu")
+
+[node name="Area2D11" type="Area2D" parent="FoldableContainer" unique_id=1829503729 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D11" unique_id=1848933667 groups=["Killzone"]]
+position = Vector2(480, 896)
+shape = SubResource("RectangleShape2D_yhwbt")
+
+[node name="Area2D12" type="Area2D" parent="FoldableContainer" unique_id=437515733 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D12" unique_id=1311031961 groups=["Killzone"]]
+position = Vector2(672, 1008)
+shape = SubResource("RectangleShape2D_mgaae")
+
+[node name="Area2D13" type="Area2D" parent="FoldableContainer" unique_id=1163964155 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D13" unique_id=158114906 groups=["Killzone"]]
+position = Vector2(680, 1232)
+shape = SubResource("RectangleShape2D_kcsbj")
+
+[node name="Area2D14" type="Area2D" parent="FoldableContainer" unique_id=1779988018 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D14" unique_id=482764065 groups=["Killzone"]]
+position = Vector2(408, 1376)
+shape = SubResource("RectangleShape2D_1drws")
+
+[node name="Area2D15" type="Area2D" parent="FoldableContainer" unique_id=1390889055 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D15" unique_id=714402334 groups=["Killzone"]]
+position = Vector2(416, 1232)
+shape = SubResource("RectangleShape2D_s22ai")
+
+[node name="Area2D16" type="Area2D" parent="FoldableContainer" unique_id=777304858 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D16" unique_id=176421198 groups=["Killzone"]]
+position = Vector2(592, 1376)
+shape = SubResource("RectangleShape2D_s22ai")
+
+[node name="Area2D17" type="Area2D" parent="FoldableContainer" unique_id=889898065 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D17" unique_id=779852884 groups=["Killzone"]]
+position = Vector2(688, 1552)
+shape = SubResource("RectangleShape2D_s22ai")
+
+[node name="Area2D18" type="Area2D" parent="FoldableContainer" unique_id=1039431992 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D18" unique_id=1533587035 groups=["Killzone"]]
+position = Vector2(672, 1568)
+shape = SubResource("RectangleShape2D_s22ai")
+
+[node name="Area2D21" type="Area2D" parent="FoldableContainer" unique_id=1285956193 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D21" unique_id=309076880 groups=["Killzone"]]
+position = Vector2(592, 1616)
+shape = SubResource("RectangleShape2D_s22ai")
+
+[node name="Area2D22" type="Area2D" parent="FoldableContainer" unique_id=1837135400 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D22" unique_id=1058917532 groups=["Killzone"]]
+position = Vector2(736, 1664)
+shape = SubResource("RectangleShape2D_s22ai")
+
+[node name="Area2D19" type="Area2D" parent="FoldableContainer" unique_id=1834282729 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D19" unique_id=498576757 groups=["Killzone"]]
+position = Vector2(696, 1472)
+shape = SubResource("RectangleShape2D_0u6va")
+
+[node name="Area2D20" type="Area2D" parent="FoldableContainer" unique_id=220911239 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D20" unique_id=1931112074 groups=["Killzone"]]
+position = Vector2(560, 1488)
+shape = SubResource("RectangleShape2D_wc63j")
+
+[node name="Area2D23" type="Area2D" parent="FoldableContainer" unique_id=1498113583 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D23" unique_id=2016855654 groups=["Killzone"]]
+position = Vector2(352, 1776)
+shape = SubResource("RectangleShape2D_rtekc")
+
+[node name="Area2D24" type="Area2D" parent="FoldableContainer" unique_id=840636320 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D24" unique_id=1582175153 groups=["Killzone"]]
+position = Vector2(624, 1824)
+shape = SubResource("RectangleShape2D_isrvv")
+
+[node name="Area2D25" type="Area2D" parent="FoldableContainer" unique_id=774382354 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D25" unique_id=1058960892 groups=["Killzone"]]
+position = Vector2(760, 1808)
+shape = SubResource("RectangleShape2D_q3hlt")
+
+[node name="Area2D28" type="Area2D" parent="FoldableContainer" unique_id=1037759979 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D28" unique_id=1813066880 groups=["Killzone"]]
+position = Vector2(1024, 1952)
+shape = SubResource("RectangleShape2D_rjhfv")
+
+[node name="Area2D26" type="Area2D" parent="FoldableContainer" unique_id=665973260 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D26" unique_id=675025079 groups=["Killzone"]]
+position = Vector2(952, 1840)
+shape = SubResource("RectangleShape2D_ymgny")
+
+[node name="Area2D27" type="Area2D" parent="FoldableContainer" unique_id=1271364873 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D27" unique_id=802149768 groups=["Killzone"]]
+position = Vector2(944, 1824)
+shape = SubResource("RectangleShape2D_hatrs")
+
+[node name="Area2D29" type="Area2D" parent="FoldableContainer" unique_id=1767019512 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D29" unique_id=1488747705 groups=["Killzone"]]
+position = Vector2(960, 2064)
+shape = SubResource("RectangleShape2D_hatrs")
+
+[node name="Area2D30" type="Area2D" parent="FoldableContainer" unique_id=31908882 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D30" unique_id=448778610 groups=["Killzone"]]
+position = Vector2(880, 2096)
+shape = SubResource("RectangleShape2D_hatrs")
+
+[node name="Area2D31" type="Area2D" parent="FoldableContainer" unique_id=1078604228 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D31" unique_id=183677315 groups=["Killzone"]]
+position = Vector2(816, 2128)
+shape = SubResource("RectangleShape2D_hatrs")
+
+[node name="Area2D32" type="Area2D" parent="FoldableContainer" unique_id=1062722353 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D32" unique_id=2015526999 groups=["Killzone"]]
+position = Vector2(776, 2160)
+shape = SubResource("RectangleShape2D_gohu1")
+
+[node name="Area2D33" type="Area2D" parent="FoldableContainer" unique_id=2512493 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D33" unique_id=1101233308 groups=["Killzone"]]
+position = Vector2(664, 2320)
+shape = SubResource("RectangleShape2D_kxklg")
+
+[node name="Area2D34" type="Area2D" parent="FoldableContainer" unique_id=919122343 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D34" unique_id=1564672886 groups=["Killzone"]]
+position = Vector2(584, 2432)
+shape = SubResource("RectangleShape2D_kxklg")
+
+[node name="Area2D39" type="Area2D" parent="FoldableContainer" unique_id=1644477545 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D39" unique_id=122889254 groups=["Killzone"]]
+position = Vector2(640, 2672)
+shape = SubResource("RectangleShape2D_nd2ux")
+
+[node name="Area2D40" type="Area2D" parent="FoldableContainer" unique_id=702984519 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D40" unique_id=758102955 groups=["Killzone"]]
+position = Vector2(432, 2640)
+shape = SubResource("RectangleShape2D_f66sb")
+
+[node name="Area2D41" type="Area2D" parent="FoldableContainer" unique_id=172155994 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D41" unique_id=336977250 groups=["Killzone"]]
+position = Vector2(496, 2800)
+shape = SubResource("RectangleShape2D_cjvl3")
+
+[node name="Area2D42" type="Area2D" parent="FoldableContainer" unique_id=466603338 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D42" unique_id=1316947658 groups=["Killzone"]]
+position = Vector2(416, 2784)
+shape = SubResource("RectangleShape2D_pba3b")
+
+[node name="Area2D43" type="Area2D" parent="FoldableContainer" unique_id=957541563 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D43" unique_id=913506216 groups=["Killzone"]]
+position = Vector2(400, 2768)
+shape = SubResource("RectangleShape2D_pba3b")
+
+[node name="Area2D44" type="Area2D" parent="FoldableContainer" unique_id=1897209039 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D44" unique_id=748316971 groups=["Killzone"]]
+position = Vector2(384, 2752)
+shape = SubResource("RectangleShape2D_pba3b")
+
+[node name="Area2D45" type="Area2D" parent="FoldableContainer" unique_id=38692819 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D45" unique_id=877240758 groups=["Killzone"]]
+position = Vector2(256, 2896)
+shape = SubResource("RectangleShape2D_pba3b")
+
+[node name="Area2D46" type="Area2D" parent="FoldableContainer" unique_id=384103233 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D46" unique_id=414025110 groups=["Killzone"]]
+position = Vector2(288, 2912)
+shape = SubResource("RectangleShape2D_pba3b")
+
+[node name="Area2D47" type="Area2D" parent="FoldableContainer" unique_id=1384739120 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D47" unique_id=968592209 groups=["Killzone"]]
+position = Vector2(320, 2928)
+shape = SubResource("RectangleShape2D_pba3b")
+
+[node name="Area2D48" type="Area2D" parent="FoldableContainer" unique_id=1903925487 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D48" unique_id=666029059 groups=["Killzone"]]
+position = Vector2(352, 2944)
+shape = SubResource("RectangleShape2D_pba3b")
+
+[node name="Area2D49" type="Area2D" parent="FoldableContainer" unique_id=254238915 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D49" unique_id=268808170 groups=["Killzone"]]
+position = Vector2(384, 2960)
+shape = SubResource("RectangleShape2D_pba3b")
+
+[node name="Area2D50" type="Area2D" parent="FoldableContainer" unique_id=795367123 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D50" unique_id=883741117 groups=["Killzone"]]
+position = Vector2(146, 2969)
+shape = SubResource("RectangleShape2D_7x85k")
+
+[node name="Area2D51" type="Area2D" parent="FoldableContainer" unique_id=273939808 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D51" unique_id=1256014529 groups=["Killzone"]]
+position = Vector2(480, 3056)
+shape = SubResource("RectangleShape2D_87t1g")
+
+[node name="Area2D36" type="Area2D" parent="FoldableContainer" unique_id=2040359928 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D36" unique_id=1277589790 groups=["Killzone"]]
+position = Vector2(632, 2560)
+shape = SubResource("RectangleShape2D_yvkq3")
+
+[node name="Area2D37" type="Area2D" parent="FoldableContainer" unique_id=1584146860 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D37" unique_id=793757244 groups=["Killzone"]]
+position = Vector2(648, 2576)
+shape = SubResource("RectangleShape2D_yvkq3")
+
+[node name="Area2D38" type="Area2D" parent="FoldableContainer" unique_id=1859557699 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D38" unique_id=1786861836 groups=["Killzone"]]
+position = Vector2(624, 2544)
+shape = SubResource("RectangleShape2D_tfieu")
+
+[node name="Area2D52" type="Area2D" parent="FoldableContainer" unique_id=1334370762 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D52" unique_id=1273758910 groups=["Killzone"]]
+position = Vector2(58, 2249)
+shape = SubResource("RectangleShape2D_tfieu")
+
+[node name="Area2D53" type="Area2D" parent="FoldableContainer" unique_id=14419570 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D53" unique_id=1726725568 groups=["Killzone"]]
+position = Vector2(-6, 2201)
+shape = SubResource("RectangleShape2D_tfieu")
+
+[node name="Area2D54" type="Area2D" parent="FoldableContainer" unique_id=927389030 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D54" unique_id=2031636191 groups=["Killzone"]]
+position = Vector2(58, 2153)
+shape = SubResource("RectangleShape2D_tfieu")
+
+[node name="Area2D55" type="Area2D" parent="FoldableContainer" unique_id=1386775997 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D55" unique_id=1476238800 groups=["Killzone"]]
+position = Vector2(-6, 2105)
+shape = SubResource("RectangleShape2D_tfieu")
+
+[node name="Area2D56" type="Area2D" parent="FoldableContainer" unique_id=39630782 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D56" unique_id=936134359 groups=["Killzone"]]
+position = Vector2(-1334, 841)
+shape = SubResource("RectangleShape2D_ju6fo")
+
+[node name="Area2D57" type="Area2D" parent="FoldableContainer" unique_id=1599691245 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D57" unique_id=1358271620 groups=["Killzone"]]
+position = Vector2(-1558, 841)
+shape = SubResource("RectangleShape2D_ju6fo")
+
+[node name="Area2D35" type="Area2D" parent="FoldableContainer" unique_id=1083858656 groups=["Killzone"]]
+position = Vector2(-706, -18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FoldableContainer/Area2D35" unique_id=1926052694 groups=["Killzone"]]
+position = Vector2(480, 2256)
+shape = SubResource("RectangleShape2D_jyacx")
 
 [connection signal="area_entered" from="Player/Area2D" to="Player" method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="FloorTimer" to="Player" method="_on_floor_timer_timeout"]
